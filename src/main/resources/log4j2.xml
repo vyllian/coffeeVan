@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout
+                    pattern="[%-level] %d{yyyy-MM-dd HH:mm:ss} [%t] %c{1} - %msg%n"/>
+        </Console>
+        <SMTP name="mail" subject="Error Log" to="nastiavylitkova@ukr.net" from="nastiavylitkova@ukr.net"
+              smtpHost="smtp.ukr.net" smtpPort="2525" smtpUsername="nastiavylitkova@ukr.net" smtpPassword="WbSxK2DStbBdzZV0"
+              smtpProtocol="smtps"
+              bufferSize="100">
+        </SMTP>
+
+        <File name="file"
+              append="true"
+              fileName="logs.log">
+            <PatternLayout
+                    pattern="[%-level] %d{yyyy-MM-dd HH:mm:ss} [%t] %c{1} - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="info" additivity="false">
+            <!--<AppenderRef ref="console"/>-->
+            <AppenderRef ref="file"/>
+            <AppenderRef ref="mail" level="error"/>
+        </Root>
+    </Loggers>
+</Configuration>

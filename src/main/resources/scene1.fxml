@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootAnch" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="600.0" style="-fx-background-color: sandybrown;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMain">
+   <children>
+      <Button fx:id="deleteVanButton" layoutX="365.0" layoutY="388.0" mnemonicParsing="false" onAction="#switchToScene1_1" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: lightcyan; -fx-effect: dropshadow( one-pass-box ,#994300 , 2 , 2 , 2 , 2 );" text="Видалити фургон" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="365.0" AnchorPane.rightAnchor="86.0" AnchorPane.topAnchor="388.0">
+         <font>
+            <Font name="Bookman Old Style" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="fillVanButton" layoutX="117.0" layoutY="388.0" mnemonicParsing="false" onAction="#switchToScene3" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: lightcyan; -fx-effect: dropshadow( one-pass-box ,#994300 , 2 , 2 , 2 , 2 );" text="Завантажити фургон" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="346.0" AnchorPane.topAnchor="388.0">
+         <font>
+            <Font name="Bookman Old Style" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TreeTableView fx:id="table" layoutX="24.0" layoutY="49.0" onMouseClicked="#releaseMenu" prefHeight="332.0" prefWidth="552.0" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="49.0">
+        <columns>
+          <TreeTableColumn fx:id="column" prefWidth="551.2000122070312" sortable="false" text="№    |           Фургон           |  Заповненість (%)  |  Завантаженість (кг)  |  Вартість кави (грн)" />
+        </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                  <MenuItem fx:id="sortOption" disable="true" mnemonicParsing="false" onAction="#sorting" text="Сортувати вміст" />
+                <MenuItem fx:id="findOption" disable="true" mnemonicParsing="false" onAction="#finding" text="Знайти каву" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TreeTableView>
+      <Button fx:id="login" layoutX="515.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToScene0_1" prefHeight="14.0" prefWidth="58.0" style="-fx-background-color: lightcyan; -fx-effect: dropshadow( one-pass-box ,#994300 , 2 , 2 , 2 , 2 );" text="Увійти" visible="false" AnchorPane.bottomAnchor="401.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font name="Bookman Old Style" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="48.0" fitWidth="49.0" layoutX="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="391.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@images/logo2.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="78.0" layoutY="15.0" text="CAFFINE Transporting" textFill="#3d1600" AnchorPane.bottomAnchor="402.4" AnchorPane.topAnchor="15.0">
+         <font>
+            <Font name="Bookman Old Style" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameLabel" layoutX="422.0" layoutY="18.0" prefHeight="16.0" prefWidth="92.0" textAlignment="RIGHT" AnchorPane.bottomAnchor="405.0" AnchorPane.topAnchor="18.0">
+         <font>
+            <Font name="Bookman Old Style" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="logout" layoutX="515.0" layoutY="14.0" mnemonicParsing="false" onAction="#logoutApp" prefHeight="14.0" prefWidth="58.0" style="-fx-background-color: lightcyan; -fx-effect: dropshadow( one-pass-box ,#994300 , 2 , 2 , 2 , 2 );" text="Вийти" visible="false">
+         <font>
+            <Font name="Bookman Old Style" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="personIcon" layoutX="400.0" layoutY="20.0" text="👤 : " AnchorPane.bottomAnchor="401.4" AnchorPane.topAnchor="20.0" />
+   </children>
+</AnchorPane>

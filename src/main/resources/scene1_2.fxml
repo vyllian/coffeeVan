@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="600.0" style="-fx-background-color: sandybrown;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerDelete">
+   <children>
+      <ButtonBar layoutX="171.0" layoutY="208.0" prefHeight="40.0" prefWidth="200.0" />
+      <Button fx:id="delButton" disable="true" layoutX="235.0" layoutY="393.0" mnemonicParsing="false" onAction="#deleteByChoiceButton" prefHeight="26.0" prefWidth="130.0" style="-fx-background-color: lightcyan; -fx-effect: dropshadow( one-pass-box ,#994300 , 2 , 2 , 2 , 2 );" text="Видалити" AnchorPane.bottomAnchor="20.200000000000003" AnchorPane.leftAnchor="235.0" AnchorPane.rightAnchor="235.0" AnchorPane.topAnchor="388.0">
+         <font>
+            <Font name="Bookman Old Style" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="24.0" layoutY="388.0" mnemonicParsing="false" onAction="#backButton" prefHeight="31.0" prefWidth="42.0" style="-fx-effect: dropshadow( one-pass-box ,#994300 , 2 , 2 , 2 , 2 ); -fx-background-color: lightcyan;" text="←" AnchorPane.bottomAnchor="20.0" AnchorPane.topAnchor="388.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TreeTableView fx:id="table" layoutX="24.0" layoutY="25.0" onMouseClicked="#delBYChoiceReleaseButton" prefHeight="346.0" prefWidth="552.0" AnchorPane.bottomAnchor="57.60000000000002" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="49.0">
+         <columns>
+            <TreeTableColumn fx:id="column" prefWidth="551.2000122070312" sortable="false" text="№    |           Фургон           |  Заповненість (%)  |  Завантаженість (кг)  |  Вартість кави (грн)" />
+         </columns>
+      </TreeTableView>
+      <Button layoutX="533.0" layoutY="388.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="31.0" prefWidth="42.0" style="-fx-effect: dropshadow( one-pass-box ,#994300 , 2 , 2 , 2 , 2 ); -fx-background-color: lightcyan;" text="🏠" textFill="#994200f9">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="48.0" fitWidth="49.0" layoutX="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="391.0" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@images/logo2.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="78.0" layoutY="15.0" text="CAFFINE Transporting" textFill="#3d1600" AnchorPane.topAnchor="15.0">
+         <font>
+            <Font name="Bookman Old Style" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameLabel" layoutX="422.0" layoutY="18.0" prefHeight="16.0" prefWidth="92.0" textAlignment="RIGHT" AnchorPane.topAnchor="18.0">
+         <font>
+            <Font name="Bookman Old Style" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="logout" layoutX="515.0" layoutY="14.0" mnemonicParsing="false" onAction="#logoutApp" prefHeight="14.0" prefWidth="58.0" style="-fx-background-color: lightcyan; -fx-effect: dropshadow( one-pass-box ,#994300 , 2 , 2 , 2 , 2 );" text="Вийти" visible="false" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font name="Bookman Old Style" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="400.0" layoutY="20.0" text="👤 : " AnchorPane.topAnchor="20.0" />
+   </children>
+</AnchorPane>
