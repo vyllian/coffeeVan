@@ -53,33 +53,33 @@ public class ControllerNewUser {
         labelUsrExst.setVisible(false);
         Pattern p1 = Pattern.compile("[А-ЯІЇЄҐЙ][а-яійїґє]+");
         Pattern p2 = Pattern.compile("CT\\d{4}");
-        firstnameTextField.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent keyEvent) {
-                Matcher matcher = p1.matcher(firstnameTextField.getText());
-                if (matcher.find()){
-                    lastnameTextField.setDisable(firstnameTextField.getText().length() == 0);
-                    firstnameLabel.setVisible(false);
-                    firstnameTextField.setStyle("-fx-border-color: none; -fx-border-width: 1px; -fx-effect: dropshadow(one-pass-box,#994300,2,2,2,2)");
-
-                }
-                else {
-                    firstnameTextField.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-effect: dropshadow(one-pass-box,#994300,2,2,2,2)");
-                    firstnameLabel.setVisible(true);
-                }
-            }
-        });
         lastnameTextField.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
                 Matcher matcher = p1.matcher(lastnameTextField.getText());
                 if (matcher.find()){
-                    numberTextField.setDisable(lastnameTextField.getText().length() == 0);
-                    lastnameLabel.setVisible(false);
+                    firstnameTextField.setDisable(lastnameTextField.getText().length() == 0);
+                    firstnameLabel.setVisible(false);
                     lastnameTextField.setStyle("-fx-border-color: none; -fx-border-width: 1px; -fx-effect: dropshadow(one-pass-box,#994300,2,2,2,2)");
+
                 }
                 else {
                     lastnameTextField.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-effect: dropshadow(one-pass-box,#994300,2,2,2,2)");
+                    firstnameLabel.setVisible(true);
+                }
+            }
+        });
+        firstnameTextField.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                Matcher matcher = p1.matcher(firstnameTextField.getText());
+                if (matcher.find()){
+                    numberTextField.setDisable(lastnameTextField.getText().length() == 0);
+                    lastnameLabel.setVisible(false);
+                    firstnameTextField.setStyle("-fx-border-color: none; -fx-border-width: 1px; -fx-effect: dropshadow(one-pass-box,#994300,2,2,2,2)");
+                }
+                else {
+                    firstnameTextField.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-effect: dropshadow(one-pass-box,#994300,2,2,2,2)");
                     lastnameLabel.setVisible(true);
                 }
             }
