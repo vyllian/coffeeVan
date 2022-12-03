@@ -202,25 +202,27 @@ public class ControllerNewUser {
                 }
             }
         });
-
-        passwordRepTextField.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            String pass, repPass;
+        TextField repeatpass;
+        if(checkBoxRepPass.isSelected())
+            repeatpass = visiblRepPassTextField;
+        else repeatpass = passwordRepTextField;
+        repeatpass.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            String pass;
             @Override
             public void handle(KeyEvent keyEvent) {
                 if(checkBoxPass.isSelected())
                     pass = visiblPasswordTextField.getText();
                 else pass = passwordTextField.getText();
-                if(checkBoxRepPass.isSelected())
-                    repPass = visiblRepPassTextField.getText();
-                else repPass = passwordRepTextField.getText();
-                if (pass.equals(repPass)) {
+                if (pass.equals(repeatpass.getText())) {
                     addButton.setDisable(false);
                     repPasswordLabel.setVisible(false);
                     passwordRepTextField.setStyle("-fx-border-color: none; -fx-border-width: 1px; -fx-effect: dropshadow(one-pass-box,#994300,2,2,2,2)");
-
+                    visiblRepPassTextField.setStyle("-fx-border-color: none; -fx-border-width: 1px; -fx-effect: dropshadow(one-pass-box,#994300,2,2,2,2)");
                 }
                 else {
+                    addButton.setDisable(true);
                     passwordRepTextField.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-effect: dropshadow(one-pass-box,#994300,2,2,2,2)");
+                    visiblRepPassTextField.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-effect: dropshadow(one-pass-box,#994300,2,2,2,2)");
                     repPasswordLabel.setVisible(true);
                 }
             }
