@@ -167,7 +167,7 @@ public class ControllerMain  {
         }
     }
 
-    public void logoutApp(ActionEvent event) {
+    public void logoutAppWDel(ActionEvent event) {
         try {
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("scene0.fxml")));
             stage = (Stage)((Node)(event.getSource())).getScene().getWindow();
