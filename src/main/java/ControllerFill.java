@@ -185,9 +185,11 @@ public class ControllerFill  {
     }
 
     public void goBack(ActionEvent event) {
-        Van_db van_db = new Van_db();
-        Van van = van_db.getLast();
-        van_db.deleteFromVan(van.getId());
+        if (van1.isSelected()||van2.isSelected()||van3.isSelected()) {
+            Van_db van_db = new Van_db();
+            Van van = van_db.getLast();
+            van_db.deleteFromVan(van.getId());
+        }
         switchToScene1(event);
     }
 
